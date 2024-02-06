@@ -1,0 +1,12 @@
+Goals of the program:
+- encrypt a message
+- decrypt the encrypted message
+- make the components buildable, not dependents upon each other to do some task
+
+components:
+- rotors
+- reflector
+- ringstellung (optional)
+
+how to encrypt:
+- the input taken is passed 
