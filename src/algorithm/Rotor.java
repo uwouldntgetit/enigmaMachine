@@ -5,9 +5,26 @@ package algorithm;
  * */
 
 public class Rotor {
-	private char[] letterOrder;
+	private int[] letterOrder;
+
 	
-	
-	
-	public char 
+	public void rotateForward(){
+		int first = letterOrder[0];
+
+		for(int i = 25; i > 0; i--){
+			letterOrder[i - 1] = arr[i];
+		}
+		arr[25] = first;
+	}
+
+	public int encrypt(int c){
+		try {
+			return arr[c];
+		}
+		catch (IndexOutOfBoundsException e){
+		}
+			return -1;
+		}
+	}
+
 }
