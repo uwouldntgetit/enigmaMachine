@@ -24,3 +24,6 @@ rotors:
 - the array that contains the rotor combination doesn't have to be a char one but it is actually better if it's an int one
   containing numbers from 1 to 26 representing the alphabet. It's better since I can directly index the array of the next rotor
   without having to convert the letter to number.
+  
+problems:
+- how to keep count of the rotor's movements
