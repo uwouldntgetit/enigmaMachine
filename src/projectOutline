@@ -13,17 +13,29 @@ how it works:
 - The user chooses the modes: encrypt message or decrypt message
 - for every mode the user is asked which rotors to use and in which position
 - the input is taken and passed to a code construct that simulates the engima machine with its specifics
+
 how to encrypt:
 - the letter passes to the first rotor, it is changed and then passed to the next rotor
 - this continue until the last rotor, where the letter is passed to a reflector that scrambles it and passes it back
   to the last rotor.
 - after each letter is completely encrypted the rotor rotates
-
+how to decrypt:
+- the rotors are positioned on the starting position of when the message was encrypted
+- the encrypted message is typed
+- the rotors rotate at each letter inserted
+- the decrypted message comes out
 
 rotors:
 - the array that contains the rotor combination doesn't have to be a char one but it is actually better if it's an int one
   containing numbers from 1 to 26 representing the alphabet. It's better since I can directly index the array of the next rotor
   without having to convert the letter to number.
+- they store their starting position
+
+reflectors:
+- they are like rotor just that they don't make a rotation every time a letter is pressed
+- they reflect back the encrypted letter and make it pass from the last rotor trhough the first one
   
 problems:
 - how to keep count of the rotor's movements
+- I can do it when creating the Machine class, have to keep the ringstellung in mind tho.
+- understand what a ringstellung does
