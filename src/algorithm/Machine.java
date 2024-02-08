@@ -1,6 +1,8 @@
 package algorithm;
 
 import java.util.ArrayList;
+import java.util.List;
+import algorithm.*;
 
 public class Machine {
 	private ArrayList<Rotor> rotorList;
@@ -15,7 +17,7 @@ public class Machine {
 			rotorList.add(new Rotor(arr, arrStartingPos[i]));
 		}
 		char[] change = getRotorCombination(EnigmaSpecifications.REFLECTOR_A);
-		reflector = new Rotor(Rotor.fromCharToInt(change));
+		reflector = new Rotor(Rotor.fromCharToInt(change), 0);
 	}
 
 	// in this first version there's only one rotor and one reflector and the rotor is turned
