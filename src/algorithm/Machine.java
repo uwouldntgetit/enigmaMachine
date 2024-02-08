@@ -16,18 +16,18 @@ public class Machine {
 			arr = Rotor.fromCharToInt(getRotorCombination(listSpecs.get(i)));
 			rotorList.add(new Rotor(arr, arrStartingPos[i]));
 		}
-		char[] change = getRotorCombination(EnigmaSpecifications.REFLECTOR_A);
+		char[] change = getRotorCombination(EnigmaSpecifications.REFLECTOR_A).toCharArray();
 		reflector = new Rotor(Rotor.fromCharToInt(change), 0);
 	}
 
 	// in this first version there's only one rotor and one reflector and the rotor is turned
 	// on every letter
 	public String processMessage(String message){
-		char[] arrMessage = message.toString;
+		char[] arrMessage = message.toCharArray();
 		StringBuilder toReturn = new StringBuilder();
 
 		for(int i = 0; i < arrMessage.length; i++){
-			char encrypted = arrMessage[i];
+			int encrypted = arrMessage[i];
 
 			for(Rotor r : rotorList){
 				encrypted = r.encrypt(encrypted);
@@ -119,4 +119,8 @@ class Rotor {
 
 		return toReturn;
 	}
+
+    public static char fromIntToChar(int i){
+        return (char) (i + 65);
+    }
 }
